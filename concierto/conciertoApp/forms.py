@@ -17,6 +17,12 @@ class FormPersona(forms.ModelForm):
             raise forms.ValidationError("El largo maximo del nombre son 20 caracteres")
         return nombre
     
+    def clean_Apellido(self):
+        apellido = self.cleaned_data['Apellido']
+        if len(apellido) > 20:
+            raise forms.ValidationError("El largo maximo del apellido son 20 caracteres")
+        return apellido
+    
     def clean_correo(self):
         email = self.cleaned_data['Correo']
         if email.find('@') == -1:
