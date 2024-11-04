@@ -1,7 +1,7 @@
 from django.db import models
 
 class Persona(models.Model):
-    RUT = models.CharField(max_length=9, unique=True)
+    RUT = models.CharField(max_length=20, unique=True)
     Nombre = models.CharField(max_length=20)
     Apellido = models.CharField(max_length=20)
     Telefono = models.CharField(max_length=9)
@@ -15,7 +15,7 @@ class Concierto(models.Model):
     Fecha = models.DateField()
     Hora = models.TimeField(default="00:00")
     Lugar = models.CharField(max_length=100)
-    Categoria = models.CharField(max_length=15)
+    Categoria = models.CharField(max_length=20)
     Capacidad = models.IntegerField()
 
     def __str__(self):
